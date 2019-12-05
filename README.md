@@ -62,7 +62,7 @@ function ResponsiveComponent() {
     const style = useMemo(() => ({ width: '50%', positionRelative }), [positionRelative])
 
     return (
-        <div style={positionRelative}>
+        <div style={style}>
             {mediaQueryListener}
             <h2>Size is <code>{size}</code></h2>
         </div>
