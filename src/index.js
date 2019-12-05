@@ -1,1 +1,2 @@
-export function default() {}
+// @flow
+export { default } from './useQueries'
