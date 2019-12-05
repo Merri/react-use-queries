@@ -59,7 +59,7 @@ function ResponsiveComponent() {
     const [[size = 'default'], mediaQueryListener] = useElementQuery(queries)
 
     // for demo purposes set a width that is smaller than the viewport width
-    const style = useMemo(() => ({ width: '50%', positionRelative }), [positionRelative])
+    const style = useMemo(() => ({ width: '50%', ...positionRelative }), [positionRelative])
 
     return (
         <div style={style}>
