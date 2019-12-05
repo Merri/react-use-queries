@@ -6,6 +6,9 @@ This React hook makes it easy for you to match with your media queries. Be it wi
 
 **Get it**: `npm install react-use-queries --save`
 
+> tiny ✔️ efficient ✔️ fast ✔️ powerful ✔️ cross-browser ✔️<br />
+> dependencies ❌ polyfills ❌ ResizeObserver ❌
+
 ## What?
 
 Given things you want to do with your media queries you can ask for a list of things that match!
