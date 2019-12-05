@@ -8,7 +8,7 @@ const style = {
     pointerEvents: 'none',
     position: 'absolute',
     top: 0,
-    userSelect: none,
+    userSelect: 'none',
     width: '100%'
 }
 
@@ -29,7 +29,10 @@ export default function useAboutBlank(setElement, ignore) {
         const element = getElement(target)
         if (element) setElement(element)
         else if (target && 'addEventListener' in target) target.addEventListener('load', onLoad)
-    }, [])
+        return () => {
+            setElement(null)
+        }
+    }, [onLoad, setElement])
 
     if (ignore) return null
 
@@ -41,6 +44,7 @@ export default function useAboutBlank(setElement, ignore) {
             src="about:blank"
             style={style}
             tabIndex={-1}
+            title="blank"
         />
     )
 }
