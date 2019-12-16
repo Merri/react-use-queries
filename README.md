@@ -73,6 +73,10 @@ function ResponsiveComponent() {
 }
 ```
 
+### Can I use this with Styled Components?
+
+[Yes, here is a demo](https://codesandbox.io/s/demo-react-use-querties-with-styled-components-ccy44)!
+
 ### Caveats
 
 For the media queries (or container queries) to work on elements you must give a containing element a style that is not
@@ -81,6 +85,8 @@ For the media queries (or container queries) to work on elements you must give a
 flavor, but instead of detecting resize we use `matchMedia` instead. The `mediaQueryListener` element is an `<iframe />`
 with url set to `about:blank`. Then this iframe element is sized to full size of it's parent by absolute positioning,
 hence requirement for `position` other than `static`.
+
+All current container query solutions have issues with circularity: `react-use-queries` does nothing to protect against these, so you should always make sure your styles don't cause unintended side-effects. For example, changing parent element's border can change it's size which can then result to infinite resize loop as each style changes the content size. Also, parent element's size shouldn't be determined by it's children's size.
 
 ### Motivation
 
