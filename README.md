@@ -42,7 +42,7 @@ You can use `window` if you're dealing with client-only codebase (and don't have
 
 ### What about elements?
 
-So you want to use matchMedia on any element?
+In this case you can omit use of the second parameter, but you must then place a `mediaQueryListener` element inside a container element.
 
 ```jsx
 import React, { useMemo } from 'react'
@@ -72,6 +72,8 @@ function ResponsiveComponent() {
     )
 }
 ```
+
+`mediaQueryListener` is a single `<iframe src="about:blank" />` element.
 
 ### Can I use this with Styled Components?
 
